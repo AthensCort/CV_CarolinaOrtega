@@ -1,0 +1,108 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.4in,bottom=0.4in,left=0.5in,right=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+\definecolor{heading}{HTML}{1F2937}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=*, itemsep=0pt, topsep=1pt, parsep=0pt, partopsep=0pt}
+
+\titleformat{\section}
+  {\large\bfseries\color{heading}}
+  {}{0pt}{}
+  [\vspace{-3pt}\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+% Project entry: name -- date (right) -- stack on second line
+\newcommand{\project}[3]{\vspace{2pt}\textbf{#1} \hfill #2 \\ \textit{#3} \par\vspace{1pt}}
+
+% Experience entry: org, dates, role
+\newcommand{\resumeSubheading}[3]{%
+  \vspace{2pt}\textbf{#1} \hfill #2 \\
+  \textit{#3} \\
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Carolina de Jes\'us Ortega Cepeda}} \\
+    \vspace{2pt}
+    B.S. in Computer Science and Technology \\
+    \vspace{3pt}
+    \href{tel:8124300714}{+52 812 430 0714} $|$
+    \href{mailto:carodejesus100@gmail.com}{carodejesus100@gmail.com} $|$
+    \href{https://www.linkedin.com/in/caro-ortega-cepeda-83ba3424b}{LinkedIn} $|$
+    % TODO: Confirm GitHub username/URL.
+    \href{https://github.com/AthensCort}{GitHub} $|$
+    Monterrey, Mexico
+\end{center}
+
+\section{Profile}
+Software Developer Intern in cybersecurity and Computer Science student who ships end-to-end products with Python and TypeScript. Designs REST APIs, relational data models (PostgreSQL, Supabase) and React frontends, with hands-on focus on security tooling. Has independently built and deployed production applications and collaborated on larger engineering teams with Git-based workflows.
+
+\section{Technical Skills}
+\textbf{Languages:} Python, TypeScript, JavaScript, Swift, Java, SQL, C/C++ (ESP32/Arduino), MATLAB \\
+\textbf{Frontend:} React 19, Vite, TailwindCSS, Three.js / react-three-fiber, HTML, CSS \\
+\textbf{Backend:} Flask, Node.js, Express, REST APIs, JWT auth, bcrypt, Swagger/OpenAPI \\
+\textbf{Databases:} PostgreSQL, Supabase, SQL Server, SQLite, Prisma ORM \\
+\textbf{DevOps / Tools:} Docker, Railway, Vercel, Gunicorn, Git/GitHub, Playwright \\
+\textbf{Data / Modeling:} NumPy, Matplotlib, Seaborn, AgentPy
+
+\section{Experience}
+\resumeSubheading{Mosaic Holdings}{Jun 2025 -- Present}{Software Developer Intern -- Cybersecurity}
+\begin{itemize}
+    \item Develop internal security software for the company's cybersecurity team, reporting directly to the cybersecurity manager.
+    \item Designed and built \textbf{Raccoon Scout}, a full-stack phishing/typosquatting detection platform (Python/Flask, React/TypeScript) that generates look-alike domains with \texttt{dnstwist} and resolves DNS (A/NS/MX), WHOIS and GeoIP data.
+    \item Implemented a Flask REST API with asynchronous, multi-threaded scan jobs (ThreadPoolExecutor) and polling endpoints; persisted results in Supabase/PostgreSQL with row-level security, Google OAuth and a SQLite fallback.
+    \item Built the React 19 frontend with an interactive 3D world-map (Three.js, TopoJSON); deployed on Railway (Gunicorn) + Vercel, containerized with Docker.
+\end{itemize}
+
+\resumeSubheading{VOLTEC -- FIRST Tech Challenge Robotics}{01/2024 -- 06/2024}{Technical Mentor}
+\begin{itemize}
+    \item Debugged and improved robot control code, managed development/operations logistics, and maintained technical documentation on programming and hardware.
+    \item Supported the team's run to national qualification in the FTC 2024 Championship.
+\end{itemize}
+
+\section{Projects}
+\project{MyoQuack -- EMG Biofeedback \& Rehabilitation System}{Mar -- Apr 2026}{TypeScript, Node.js, Express, Prisma, PostgreSQL, ESP32 \quad $\cdot$\ Solo}
+\begin{itemize}
+    \item Built a full IoT-to-web pipeline: ESP32 firmware capturing muscle (EMG) signal data, a typed Node.js/Express + Prisma REST backend over PostgreSQL, and a React client.
+    \item Modeled doctors, patients, EMG sessions and per-contraction events (peak $\mu$V, RMS, iEMG, waveform); implemented JWT + bcrypt auth, role-based access, CSV export, Swagger/OpenAPI docs and Docker Compose.
+\end{itemize}
+
+\project{Reto -- iOS Queue \& Service-Window Management System}{Aug -- Dec 2025}{Swift, SwiftUI, MVVM, Flask, SQL Server \quad $\cdot$\ Solo}
+\begin{itemize}
+    \item Built two native iOS apps (SwiftUI, MVVM): a client app to generate, track and cancel queue turns, and an admin app with role-based authentication, employee statistics and service-window dashboards.
+    \item Designed a Flask + SQL Server backend exposing the queue/auth/dashboard REST API, consumed from iOS via URLSession and typed DTOs with TLS/transport handling for live updates.
+\end{itemize}
+
+\project{AFI -- Fan Engagement Platform}{Feb -- Jun 2026}{React 19, TypeScript, Vite, TailwindCSS, Supabase \quad $\cdot$\ Team}
+\begin{itemize}
+    \item Developed the real-time chat Rooms module (create/join rooms, live messaging) using React, custom hooks and Supabase Realtime, plus the friends system (invitations, notifications) and profile/avatar features.
+    \item Authored SQL migrations for room join-requests and friend relationships; contributed to the points-based shop with admin audit logging.
+\end{itemize}
+
+% Removed to fit one page -- re-add if needed:
+% \project{Multi-Agent Grid Simulation}{Aug -- Dec 2025}{Python, AgentPy, NumPy, Matplotlib, Seaborn}
+% \begin{itemize}
+%     % TODO: Confirm whether this should be framed as a traffic-intersection model (code is a grid-cleaning agent).
+%     \item Built an agent-based model of an autonomous agent sweeping a grid (boustrophedon coverage), tracking state, movement count and coverage \%, with animated visualizations.
+% \end{itemize}
+
+\section{Leadership \& Extracurricular}
+\resumeSubheading{Cybersecurity TEC (Student Organization)}{01/2024 -- 12/2024}{Logistics Coordinator}
+\begin{itemize}
+    \item Organized Linux workshops, national cybersecurity conferences, and the inter-campus Zero2Hero 2024 competition.
+\end{itemize}
+
+\section{Education}
+\resumeSubheading{Tecnol\'ogico de Monterrey, Campus Monterrey}{Expected: June 2027}{B.S. in Computer Science and Technology \quad GPA: 96.38/100}
+\textbf{Relevant coursework:} Data Structures \& Algorithms, Analysis \& Design of Advanced Algorithms, Software Requirements Analysis, Object-Oriented Programming, Computer Security in Networks \& Software Systems, Internet of Things.
+
+\end{document}
