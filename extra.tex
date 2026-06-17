@@ -1,0 +1,105 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{microtype}
+\usepackage[top=0.42in,bottom=0.42in,left=0.55in,right=0.55in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage[document]{ragged2e}
+
+\definecolor{accent}{HTML}{1A4E8A}
+\definecolor{heading}{HTML}{1F2937}
+\definecolor{subtle}{HTML}{4B5563}
+\definecolor{rule}{HTML}{C9D3E0}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1.5pt, topsep=2pt, parsep=0pt, partopsep=0pt, label=\textcolor{accent}{\small\textbullet}}
+
+\titleformat{\section}{\normalsize\bfseries\color{accent}}{}{0pt}{}[\vspace{1pt}{\color{rule}\titlerule[1pt]}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+\newcommand{\entry}[3]{\par\vspace{2pt}\begin{tabularx}{\textwidth}{@{}X r@{}}\textbf{\color{heading}#1} & \textbf{\color{subtle}#2}\end{tabularx}\par\nobreak\vspace{1pt}{\itshape\color{subtle}#3}\par\vspace{1pt}}
+
+\newcommand{\project}[3]{\par\vspace{2pt}\begin{tabularx}{\textwidth}{@{}X r@{}}\textbf{\color{heading}#1} & \textbf{\color{subtle}#2}\end{tabularx}\par\nobreak\vspace{1pt}{\small\itshape\color{subtle}#3}\par\vspace{1pt}}
+
+\newcommand{\skillrow}[2]{\textbf{\color{heading}#1:} #2\par\vspace{1pt}}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{21}{23}\selectfont\bfseries\color{heading}Carolina de Jesús Ortega Cepeda}\\[3pt]
+  {\color{subtle}B.S. in Computer Science and Technology}\\[4pt]
+  \small
+  \href{tel:+528124300714}{+52 812 430 0714}
+  \enspace\textcolor{rule}{$\vert$}\enspace
+  \href{mailto:carodejesus100@gmail.com}{carodejesus100@gmail.com}
+  \enspace\textcolor{rule}{$\vert$}\enspace
+  \href{https://www.linkedin.com/in/caro-ortega-cepeda-83ba3424b}{LinkedIn}
+  \enspace\textcolor{rule}{$\vert$}\enspace
+  \href{https://github.com/AthensCort}{GitHub}
+  \enspace\textcolor{rule}{$\vert$}\enspace
+  Monterrey, Mexico
+\end{center}
+\vspace{1pt}
+
+\section{PROFILE}
+Cybersecurity Software Developer Intern and CS student who ships end-to-end products with Python and TypeScript. Builds REST APIs, relational data models (PostgreSQL) and React frontends, with a focus on security tooling.
+
+\section{TECHNICAL SKILLS}
+\skillrow{Languages}{Python, TypeScript, JavaScript, SQL, Java}
+\skillrow{Frontend}{React, TailwindCSS, HTML/CSS, Vite}
+\skillrow{Backend}{Node.js, Express, Flask, REST APIs, JWT auth}
+\skillrow{Databases}{PostgreSQL, SQL Server, Supabase, Prisma ORM}
+\skillrow{DevOps / Tools}{Docker, Git/GitHub, Vercel, Railway}
+\skillrow{Languages}{Spanish (Native), English (C1), German (A2)}
+
+\section{EXPERIENCE}
+\entry{Mosaic Holdings}{Jun 2025 -- Present}{Software Developer Intern -- Cybersecurity}
+\begin{itemize}
+  \item Develop security software for the company's cybersecurity team, reporting directly to the cybersecurity manager.
+  \item Designed and built \textbf{Raccoon Scout}, a full-stack phishing/typosquatting detection platform (Python/Flask, React/TypeScript) that generates look-alike domains with dnstwist and resolves DNS (A/NS/MX), WHOIS and GeoIP data.
+  \item Implemented a Flask REST API with asynchronous, multi-threaded scan jobs (ThreadPoolExecutor) and polling endpoints; persisted results in Supabase/PostgreSQL with row-level security, Google OAuth and a SQLite fallback.
+  \item Built the React 19 frontend with an interactive 3D world-map (Three.js, TopoJSON); deployed on Railway (Gunicorn) and Vercel, containerized with Docker.
+\end{itemize}
+
+\entry{VOLTEC -- FIRST Tech Challenge Robotics}{Jan 2024 -- Jun 2024}{Technical Mentor}
+\begin{itemize}
+  \item Debugged and improved robot control code, managed development/operations logistics.
+  \item Supported the team's run to national qualification in the FTC 2024 Championship.
+\end{itemize}
+
+\section{PROJECTS}
+\project{MyoQuack -- EMG Biofeedback \& Rehabilitation System}{Jan 2026 -- Present}{TypeScript, Node.js, Express, Prisma, PostgreSQL, ESP32 \enspace$\cdot$\enspace Solo}
+\begin{itemize}
+  \item Built a full IoT-to-web pipeline: ESP32 firmware capturing muscle (EMG) signal data, a typed Node.js/Express + Prisma REST backend over PostgreSQL, and a React client.
+  \item Modeled doctors, patients, EMG sessions and per-contraction events (peak $\mu$V, RMS, iEMG, waveform); implemented JWT + bcrypt auth, role-based access, CSV export, Swagger/OpenAPI docs and Docker Compose.
+\end{itemize}
+
+\project{AFI -- Fan Engagement Platform}{Feb -- Jun 2026}{React 19, TypeScript, Vite, TailwindCSS, Supabase \enspace$\cdot$\enspace Team}
+\begin{itemize}
+  \item Developed the real-time chat Rooms module (create/join rooms, live messaging) using React, custom hooks and Supabase Realtime, plus the friends system (invitations, notifications) and profile/avatar features.
+  \item Authored SQL migrations for room join-requests and friend relationships.
+\end{itemize}
+
+\project{Ternium -- iOS Queue \& Service-Window Management System}{Aug -- Dec 2025}{Swift, SwiftUI, MVVM, Flask, SQL Server \enspace$\cdot$\enspace Team}
+\begin{itemize}
+  \item Built two native iOS apps (SwiftUI, MVVM): a client app to generate, track and cancel queue turns, and an admin app with role-based authentication, employee statistics and service-window dashboards.
+  \item Designed a Flask + SQL Server backend exposing the queue/auth/dashboard REST API, consumed from iOS via URLSession and typed DTOs with TLS/transport handling for live updates.
+\end{itemize}
+
+\section{EDUCATION}
+\entry{Tecnológico de Monterrey, Campus Monterrey}{Expected June 2027}{B.S. in Computer Science and Technology \enspace$\cdot$\enspace GPA: 96.38/100}
+\textbf{\color{heading}Relevant coursework:} Data Structures \& Algorithms, Analysis \& Design of Advanced Algorithms, Software Requirements Analysis, Object-Oriented Programming, Computer Security in Networks \& Software Systems, Internet of Things.
+
+\end{document}

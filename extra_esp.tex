@@ -1,0 +1,105 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{charter}
+\usepackage{microtype}
+\usepackage[top=0.42in,bottom=0.42in,left=0.55in,right=0.55in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage[document]{ragged2e}
+
+\definecolor{accent}{HTML}{1A4E8A}
+\definecolor{heading}{HTML}{1F2937}
+\definecolor{subtle}{HTML}{4B5563}
+\definecolor{rule}{HTML}{C9D3E0}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1.5pt, topsep=2pt, parsep=0pt, partopsep=0pt, label=\textcolor{accent}{\small\textbullet}}
+
+\titleformat{\section}{\normalsize\bfseries\color{accent}}{}{0pt}{}[\vspace{1pt}{\color{rule}\titlerule[1pt]}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+\newcommand{\entry}[3]{\par\vspace{2pt}\begin{tabularx}{\textwidth}{@{}X r@{}}\textbf{\color{heading}#1} & \textbf{\color{subtle}#2}\end{tabularx}\par\nobreak\vspace{1pt}{\itshape\color{subtle}#3}\par\vspace{1pt}}
+
+\newcommand{\project}[3]{\par\vspace{2pt}\begin{tabularx}{\textwidth}{@{}X r@{}}\textbf{\color{heading}#1} & \textbf{\color{subtle}#2}\end{tabularx}\par\nobreak\vspace{1pt}{\small\itshape\color{subtle}#3}\par\vspace{1pt}}
+
+\newcommand{\skillrow}[2]{\textbf{\color{heading}#1:} #2\par\vspace{1pt}}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{21}{23}\selectfont\bfseries\color{heading}Carolina de Jesús Ortega Cepeda}\\[3pt]
+  {\color{subtle}Ingeniería en Tecnologías Computacionales}\\[4pt]
+  \small
+  \href{tel:+528124300714}{+52 812 430 0714}
+  \enspace\textcolor{rule}{$\vert$}\enspace
+  \href{mailto:carodejesus100@gmail.com}{carodejesus100@gmail.com}
+  \enspace\textcolor{rule}{$\vert$}\enspace
+  \href{https://www.linkedin.com/in/caro-ortega-cepeda-83ba3424b}{LinkedIn}
+  \enspace\textcolor{rule}{$\vert$}\enspace
+  \href{https://github.com/AthensCort}{GitHub}
+  \enspace\textcolor{rule}{$\vert$}\enspace
+  Monterrey, México
+\end{center}
+\vspace{1pt}
+
+\section{PERFIL}
+Desarrolladora de Software (Intern) en ciberseguridad y estudiante de ITC que construye productos completos en Python y TypeScript. Diseño APIs REST, modelos de datos relacionales (PostgreSQL) y frontends en React, con enfoque en herramientas de seguridad.
+
+\section{HABILIDADES TÉCNICAS}
+\skillrow{Lenguajes}{Python, TypeScript, JavaScript, SQL, Java}
+\skillrow{Frontend}{React, TailwindCSS, HTML/CSS, Vite}
+\skillrow{Backend}{Node.js, Express, Flask, APIs REST, autenticación JWT}
+\skillrow{Bases de datos}{PostgreSQL, SQL Server, Supabase, Prisma ORM}
+\skillrow{DevOps / Herramientas}{Docker, Git/GitHub, Vercel, Railway}
+
+\section{EXPERIENCIA}
+\entry{Mosaic Holdings}{Jun 2025 -- Presente}{Desarrolladora de Software (Intern) -- Ciberseguridad}
+\begin{itemize}
+  \item Desarrollo software de seguridad para el equipo de ciberseguridad de la empresa, reportando directamente al gerente de ciberseguridad.
+  \item Diseñé y construí \textbf{Raccoon Scout}, una plataforma full-stack de detección de phishing/typosquatting (Python/Flask, React/TypeScript) que genera dominios similares con \texttt{dnstwist} y resuelve datos DNS (A/NS/MX), WHOIS y GeoIP.
+  \item Implementé una API REST en Flask con trabajos de escaneo asíncronos y multihilo (ThreadPoolExecutor) y endpoints de polling; persistí resultados en Supabase/PostgreSQL con seguridad a nivel de fila, Google OAuth y respaldo en SQLite.
+  \item Construí el frontend en React 19 con un mapa mundial 3D interactivo (Three.js, TopoJSON); desplegado en Railway (Gunicorn) y Vercel, contenerizado con Docker.
+\end{itemize}
+
+\entry{VOLTEC -- FIRST Tech Challenge Robotics}{Ene 2024 -- Jun 2024}{Mentora Técnica}
+\begin{itemize}
+  \item Depuré y mejoré el código de control del robot, gestioné la logística de desarrollo/operaciones y mantuve la documentación técnica de programación y hardware.
+  \item Apoyé la clasificación nacional del equipo en el FTC 2024 Championship.
+\end{itemize}
+
+\section{PROYECTOS}
+\project{MyoQuack -- Sistema de Biofeedback EMG y Rehabilitación}{Mar -- Abr 2026}{TypeScript, Node.js, Express, Prisma, PostgreSQL, ESP32 \enspace$\cdot$\enspace Individual}
+\begin{itemize}
+  \item Construí un pipeline completo IoT-a-web: firmware ESP32 que captura señales musculares (EMG), un backend REST tipado en Node.js/Express + Prisma sobre PostgreSQL, y un cliente en React.
+  \item Modelé médicos, pacientes, sesiones EMG y eventos por contracción (pico $\mu$V, RMS, iEMG, waveform); implementé autenticación JWT + bcrypt, acceso por rol, exportación a CSV, documentación Swagger/OpenAPI y Docker Compose.
+\end{itemize}
+
+\project{Ternium -- Sistema iOS de Gestión de Turnos y Ventanillas}{Ago -- Dic 2025}{Swift, SwiftUI, MVVM, Flask, SQL Server \enspace$\cdot$\enspace Equipo}
+\begin{itemize}
+  \item Construí dos apps nativas de iOS (SwiftUI, MVVM): una app cliente para generar, seguir y cancelar turnos, y una app de administración con autenticación por rol, estadísticas de empleados y dashboards de ventanillas.
+  \item Diseñé un backend en Flask + SQL Server que expone la API REST de turnos/auth/dashboard, consumida desde iOS vía URLSession y DTOs tipados, con manejo de TLS/transporte para actualizaciones en vivo.
+\end{itemize}
+
+\project{AFI -- Plataforma de Interacción con Aficionados}{Feb -- Jun 2026}{React 19, TypeScript, Vite, TailwindCSS, Supabase \enspace$\cdot$\enspace Equipo}
+\begin{itemize}
+  \item Desarrollé el módulo de chat en tiempo real Rooms (crear/unirse a salas, mensajería en vivo) usando React, custom hooks y Supabase Realtime, además del sistema de amigos (invitaciones, notificaciones) y funciones de perfil/avatar.
+  \item Escribí migraciones SQL para solicitudes de unión a salas y relaciones de amistad.
+\end{itemize}
+
+\section{EDUCACIÓN}
+\entry{Tecnológico de Monterrey, Campus Monterrey}{Egreso: Junio 2027}{Ingeniería en Tecnologías Computacionales \enspace$\cdot$\enspace GPA: 96.38/100}
+\textbf{\color{heading}Materias relevantes:} Estructuras de Datos y Algoritmos, Análisis y Diseño de Algoritmos Avanzados, Análisis de Requerimientos de Software, Programación Orientada a Objetos, Seguridad Computacional en Redes y Sistemas de Software, Internet de las Cosas.
+
+\end{document}
