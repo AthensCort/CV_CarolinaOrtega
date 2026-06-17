@@ -1,8 +1,6 @@
 \documentclass[10pt,letterpaper]{article}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[spanish]{babel}
 \usepackage{charter}
 \usepackage{microtype}
 \usepackage[top=0.42in,bottom=0.42in,left=0.55in,right=0.55in]{geometry}
@@ -23,7 +21,7 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\linespread{1}
+\linespread{0.95}
 
 \setlist[itemize]{leftmargin=1.2em, itemsep=1.5pt, topsep=2pt, parsep=0pt, partopsep=0pt, label=\textcolor{accent}{\small\textbullet}}
 
@@ -55,51 +53,53 @@
 \vspace{1pt}
 
 \section{PERFIL}
-Desarrolladora de Software (Intern) en ciberseguridad y estudiante de ITC que construye productos completos en Python y TypeScript. Diseño APIs REST, modelos de datos relacionales (PostgreSQL) y frontends en React, con enfoque en herramientas de seguridad.
+Practicante de Desarrollo de Software en Ciberseguridad y estudiante de Tecnologías Computacionales, con experiencia creando productos end-to-end con Python y TypeScript. Desarrollo APIs REST, modelos de datos relacionales en PostgreSQL y frontends en React, con enfoque en herramientas de seguridad.
 
 \section{HABILIDADES TÉCNICAS}
-\skillrow{Lenguajes}{Python, TypeScript, JavaScript, SQL, Java}
+\skillrow{Lenguajes de programación}{Python, TypeScript, JavaScript, SQL, Java}
 \skillrow{Frontend}{React, TailwindCSS, HTML/CSS, Vite}
 \skillrow{Backend}{Node.js, Express, Flask, APIs REST, autenticación JWT}
 \skillrow{Bases de datos}{PostgreSQL, SQL Server, Supabase, Prisma ORM}
 \skillrow{DevOps / Herramientas}{Docker, Git/GitHub, Vercel, Railway}
+\skillrow{Idiomas}{Español nativo, Inglés C1, Alemán A2}
 
 \section{EXPERIENCIA}
-\entry{Mosaic Holdings}{Jun 2025 -- Presente}{Desarrolladora de Software (Intern) -- Ciberseguridad}
+\entry{Mosaic Holdings}{Jun 2025 -- Presente}{Practicante de Desarrollo de Software -- Ciberseguridad}
 \begin{itemize}
-  \item Desarrollo software de seguridad para el equipo de ciberseguridad de la empresa, reportando directamente al gerente de ciberseguridad.
-  \item Diseñé y construí \textbf{Raccoon Scout}, una plataforma full-stack de detección de phishing/typosquatting (Python/Flask, React/TypeScript) que genera dominios similares con \texttt{dnstwist} y resuelve datos DNS (A/NS/MX), WHOIS y GeoIP.
-  \item Implementé una API REST en Flask con trabajos de escaneo asíncronos y multihilo (ThreadPoolExecutor) y endpoints de polling; persistí resultados en Supabase/PostgreSQL con seguridad a nivel de fila, Google OAuth y respaldo en SQLite.
-  \item Construí el frontend en React 19 con un mapa mundial 3D interactivo (Three.js, TopoJSON); desplegado en Railway (Gunicorn) y Vercel, contenerizado con Docker.
+  \item Desarrollo software de seguridad para el equipo de ciberseguridad, reportando directamente al gerente del área.
+  \item Diseñé y construí \textbf{Raccoon Scout}, una plataforma full-stack de detección de phishing y typosquatting con Python/Flask y React/TypeScript, capaz de generar dominios similares con dnstwist y resolver datos DNS, WHOIS y GeoIP.
+  \item Implementé una API REST en Flask con trabajos asíncronos y multi-hilo mediante ThreadPoolExecutor; persistí resultados en Supabase/PostgreSQL con row-level security, Google OAuth y respaldo en SQLite.
+  \item Construí el frontend en React 19 con un mapa mundial 3D interactivo usando Three.js y TopoJSON; desplegué la plataforma en Railway, Vercel y Docker.
 \end{itemize}
 
 \entry{VOLTEC -- FIRST Tech Challenge Robotics}{Ene 2024 -- Jun 2024}{Mentora Técnica}
 \begin{itemize}
-  \item Depuré y mejoré el código de control del robot, gestioné la logística de desarrollo/operaciones y mantuve la documentación técnica de programación y hardware.
-  \item Apoyé la clasificación nacional del equipo en el FTC 2024 Championship.
+  \item Depuré y mejoré código de control robótico, además de apoyar en logística de desarrollo y operaciones.
+  \item Apoyé al equipo en su clasificación nacional durante el FTC Championship 2024.
 \end{itemize}
 
 \section{PROYECTOS}
-\project{MyoQuack -- Sistema de Biofeedback EMG y Rehabilitación}{Mar -- Abr 2026}{TypeScript, Node.js, Express, Prisma, PostgreSQL, ESP32 \enspace$\cdot$\enspace Individual}
+\project{MyoQuack -- Sistema de Biofeedback EMG y Rehabilitación}{Ene 2026 -- Presente}{TypeScript, Node.js, Express, Prisma, PostgreSQL, ESP32 \enspace$\cdot$\enspace Individual}
 \begin{itemize}
-  \item Construí un pipeline completo IoT-a-web: firmware ESP32 que captura señales musculares (EMG), un backend REST tipado en Node.js/Express + Prisma sobre PostgreSQL, y un cliente en React.
-  \item Modelé médicos, pacientes, sesiones EMG y eventos por contracción (pico $\mu$V, RMS, iEMG, waveform); implementé autenticación JWT + bcrypt, acceso por rol, exportación a CSV, documentación Swagger/OpenAPI y Docker Compose.
+  \item Construí un flujo IoT-to-web completo: firmware en ESP32 para captura de señales musculares EMG, backend REST tipado con Node.js/Express + Prisma sobre PostgreSQL y cliente en React.
+  \item Modelé doctores, pacientes, sesiones EMG y eventos por contracción muscular, incluyendo peak $\mu$V, RMS, iEMG y waveform; implementé autenticación JWT + bcrypt, control de roles, exportación CSV, documentación Swagger/OpenAPI y Docker Compose.
 \end{itemize}
 
-\project{Ternium -- Sistema iOS de Gestión de Turnos y Ventanillas}{Ago -- Dic 2025}{Swift, SwiftUI, MVVM, Flask, SQL Server \enspace$\cdot$\enspace Equipo}
+\project{AFI -- Plataforma de Interacción para Fans}{Feb 2026 -- Jun 2026}{React 19, TypeScript, Vite, TailwindCSS, Supabase \enspace$\cdot$\enspace Equipo}
 \begin{itemize}
-  \item Construí dos apps nativas de iOS (SwiftUI, MVVM): una app cliente para generar, seguir y cancelar turnos, y una app de administración con autenticación por rol, estadísticas de empleados y dashboards de ventanillas.
-  \item Diseñé un backend en Flask + SQL Server que expone la API REST de turnos/auth/dashboard, consumida desde iOS vía URLSession y DTOs tipados, con manejo de TLS/transporte para actualizaciones en vivo.
+  \item Desarrollé el módulo de Rooms con chat en tiempo real, creación y unión a salas, mensajería en vivo, hooks personalizados y Supabase Realtime, además del sistema de amigos, invitaciones, notificaciones y perfiles con avatar.
+  \item Escribí migraciones SQL para solicitudes de acceso a salas y relaciones de amistad.
 \end{itemize}
 
-\project{AFI -- Plataforma de Interacción con Aficionados}{Feb -- Jun 2026}{React 19, TypeScript, Vite, TailwindCSS, Supabase \enspace$\cdot$\enspace Equipo}
+\project{Ternium -- Sistema iOS de Turnos y Ventanillas}{Ago 2025 -- Dic 2025}{Swift, SwiftUI, MVVM, Flask, SQL Server \enspace$\cdot$\enspace Equipo}
 \begin{itemize}
-  \item Desarrollé el módulo de chat en tiempo real Rooms (crear/unirse a salas, mensajería en vivo) usando React, custom hooks y Supabase Realtime, además del sistema de amigos (invitaciones, notificaciones) y funciones de perfil/avatar.
-  \item Escribí migraciones SQL para solicitudes de unión a salas y relaciones de amistad.
+  \item Construí dos aplicaciones nativas en iOS con SwiftUI y MVVM: una app cliente para generar, consultar y cancelar turnos, y una app administrativa con autenticación por roles, estadísticas de empleados y paneles de ventanillas.
+  \item Diseñé un backend con Flask y SQL Server que expone APIs REST para autenticación, turnos y dashboards, consumidas desde iOS mediante URLSession y DTOs tipados.
 \end{itemize}
 
 \section{EDUCACIÓN}
-\entry{Tecnológico de Monterrey, Campus Monterrey}{Egreso: Junio 2027}{Ingeniería en Tecnologías Computacionales \enspace$\cdot$\enspace GPA: 96.38/100}
-\textbf{\color{heading}Materias relevantes:} Estructuras de Datos y Algoritmos, Análisis y Diseño de Algoritmos Avanzados, Análisis de Requerimientos de Software, Programación Orientada a Objetos, Seguridad Computacional en Redes y Sistemas de Software, Internet de las Cosas.
+\entry{Tecnológico de Monterrey, Campus Monterrey}{Graduación esperada: Junio 2027}{Ingeniería en Tecnologías Computacionales \enspace$\cdot$\enspace Promedio: 96.38/100}
+\textbf{\color{heading}Cursos relevantes:} Estructuras de Datos y Algoritmos, Análisis y Diseño de Algoritmos Avanzados, Análisis de Requerimientos de Software, Programación Orientada a Objetos, Seguridad en Redes y Sistemas de Software, IoT.
 
 \end{document}
+```
